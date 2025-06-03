@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Live Data</title></head>
+<body>
+  <h1>Live Data:</h1>
+  <div id="output">Loading...</div>
+
+  <script>
+    fetch("https://your-replit-username.repl.co/data")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("output").innerText = JSON.stringify(data, null, 2);
+      })
+      .catch(err => {
+        document.getElementById("output").innerText = "Error loading data.";
+      });
+  </script>
+</body>
+</html>
